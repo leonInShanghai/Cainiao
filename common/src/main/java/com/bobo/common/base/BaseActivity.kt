@@ -25,8 +25,8 @@ abstract class BaseActivity<T: ViewDataBinding>: AppCompatActivity {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = bindView<T>(getLayoutRes())
-        initConfig()
         initView()
+        initConfig()
         initData()
     }
 
@@ -34,13 +34,23 @@ abstract class BaseActivity<T: ViewDataBinding>: AppCompatActivity {
     @LayoutRes
     abstract fun getLayoutRes(): Int
 
-    open fun initConfig() {
-
-    }
+    /**
+     * 必要的View初始化
+     */
     open fun initView() {
 
     }
 
+    /**
+     * 必要的配置初始化
+     */
+    open fun initConfig() {
+
+    }
+
+    /**
+     * 必要的数据初始化
+     */
     open fun initData() {
 
     }
@@ -56,7 +66,7 @@ abstract class BaseActivity<T: ViewDataBinding>: AppCompatActivity {
     /**
      * 扩展liveData的observe函数
      */
-    protected fun <T: Any> LiveData<T>.observerKt(block:(T?)->Unit) {
+    protected inline fun <T: Any> LiveData<T?>.observerKt(crossinline block:(T?)->Unit) {
         this.observe(viewLifeCycleOwner, Observer {data->
             // block.invoke(data) ← 也可以这样写
             block(data)
