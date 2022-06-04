@@ -50,7 +50,7 @@ android {
 
     kotlinOptions {
         jvmTarget = '1.8'
-        // NetRspKtx 使用了实验特性
+        // NetRspKtx 使用了实验特性 就是解决这个黄色警告：NetRspKtx -> @OptIn(ExperimentalContracts::class)
         freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
     }
 

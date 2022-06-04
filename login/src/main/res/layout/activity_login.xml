@@ -36,13 +36,14 @@
         </com.google.android.material.appbar.MaterialToolbar>
 
             <!-- android:scaleX="1.5"
-                 android:scaleY="1.5" -->
+                 android:scaleY="1.5"
+                 android:src="@drawable/default_icon"-->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_logo_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:src="@drawable/default_icon"
+            android:src="@drawable/logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mtoolbar_login"/>
@@ -57,13 +58,15 @@
             android:paddingStart="55dp"
             app:layout_constraintTop_toBottomOf="@+id/iv_logo_login">
 
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:maxLines="11"
+                android:maxLength="11"
                 android:singleLine="true"
                 android:text="@={ vm.obMobile }"
+                android:hint="请输入一个手机号"
                 tools:text="手机号"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -93,12 +96,14 @@
             app:layout_constraintTop_toBottomOf="@+id/et_account_login"
             app:passwordToggleEnabled="true">
 
+            <!-- android:maxLength="20" -->
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
-                android:maxLength="20"
+                android:maxLength="9"
                 android:singleLine="true"
+                android:hint="请输入9位数密码"
                 android:text="@={ vm.obPassword }"
                 tools:text="请输入密码"/>
 
@@ -117,7 +122,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/et_pwd_login"
             app:layout_constraintStart_toStartOf="@+id/et_pwd_login"
             app:layout_constraintTop_toTopOf="@+id/et_pwd_login"/>
-        
+
+        <!-- android:clickable="@{vm.obMobile.length()==11 &amp;&amp;vm.obPassword.length()>=6}" -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
@@ -125,11 +131,77 @@
             android:layout_margin="20dp"
             android:gravity="center"
             android:text="登 录"
+            android:enabled="@{vm.obMobile.length()==11&amp;&amp;vm.obPassword.length()==9}"
             android:onClick="@{ ()->vm.goLogin() }"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             app:cornerRadius="20dp"
             app:layout_constraintTop_toBottomOf="@+id/et_pwd_login"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_register_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:text="注册新账号"
+            android:textColor="#0971fe"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_login"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_forgot_pwd_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:onClick="@{ vm::AA }"
+            android:text="忘记密码"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_register_login"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_third_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:text="快捷登录方式"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_register_login"/>
+        
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_wechat_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="@{ ()-> vm.wechat(context)}"
+            android:src="@mipmap/wechat"
+            app:layout_constraintEnd_toStartOf="@id/iv_qq_login"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_third_login"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_qq_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="@{(v)->vm.qq(v)}"
+            android:src="@mipmap/qq"
+            app:layout_constraintBottom_toBottomOf="@id/iv_wechat_login"
+            app:layout_constraintEnd_toStartOf="@id/iv_weibo_login"
+            app:layout_constraintStart_toEndOf="@id/iv_wechat_login"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_weibo_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->vm.weibo()}"
+            android:src="@mipmap/weibo"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_wechat_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_qq_login"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

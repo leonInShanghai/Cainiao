@@ -14,17 +14,17 @@ import com.bobo.common.ktx.viewLifeCycleOwner
  * Created by 公众号：IT波 on 2022/5/30 Copyright © Leon. All rights reserved.
  * Functions: 简单封装的基类Activity
  */
-abstract class BaseActivity<T: ViewDataBinding>: AppCompatActivity {
+abstract class BaseActivity<ActBinding: ViewDataBinding>: AppCompatActivity {
 
     constructor(): super()
 
     constructor(@LayoutRes layout: Int) : super(layout)
 
-    protected lateinit var mBinding: T
+    protected lateinit var mBinding: ActBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBinding = bindView<T>(getLayoutRes())
+        mBinding = bindView<ActBinding>(getLayoutRes())
         initView()
         initConfig()
         initData()
@@ -66,11 +66,26 @@ abstract class BaseActivity<T: ViewDataBinding>: AppCompatActivity {
     /**
      * 扩展liveData的observe函数
      */
-    protected inline fun <T: Any> LiveData<T?>.observerKt(crossinline block:(T?)->Unit) {
-        this.observe(viewLifeCycleOwner, Observer {data->
-            // block.invoke(data) ← 也可以这样写
-            block(data)
+//    protected inline fun <T: Any?> LiveData<T>.observerKt(crossinline block:(T?) -> Unit) {
+//        this.observe(this@BaseActivity, Observer { data ->
+//            block(data)
+//        })
+//    }
+
+    protected inline fun <T: Any> LiveData<T>.observerKt(crossinline block:(T?) -> Unit) {
+        this.observe(this@BaseActivity, Observer {
+            block(it)
         })
     }
+
+    /**
+     * 扩展liveData的observe函数
+     */
+//    protected inline fun <T: Any> LiveData<T?>.observerKt(crossinline block:(T?)->Unit) {
+//        this.observe(viewLifeCycleOwner, Observer {data->
+//            // block.invoke(data) ← 也可以这样写
+//            block(data)
+//        })
+//    }
 
 }

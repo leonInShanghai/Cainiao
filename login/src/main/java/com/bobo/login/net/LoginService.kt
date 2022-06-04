@@ -1,7 +1,7 @@
-package com.bobo.login
+package com.bobo.login.net
 
-import com.bobo.login.net.LoginReqBody
 import com.bobo.service.network.BaseCniaoRsp
+import com.bobo.service.network.BaseResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -17,10 +17,10 @@ interface LoginService {
     // 校验手机号是否注册
     // 挂起函数只能在挂起函数或协程内调用
     @GET("accounts/phone/is/register")
-    fun isRegister(@Query("mobi") mobi: String): Call<BaseCniaoRsp>
+    fun isRegister(@Query("mobi") mobi: String): Call<BaseResponse>  // BaseResponse
 
     // 登录
     @POST("accounts/course/10301/login")
-    fun login(@Body reqBody: LoginReqBody): Call<BaseCniaoRsp>
+    fun login(@Body reqBody: LoginReqBody): Call<BaseResponse> //  BaseCniaoRsp
 
 }
