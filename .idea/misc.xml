@@ -6,7 +6,20 @@
         <entry key="..\:/androidCode/Cainiao/login/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/androidCode/Cainiao/login/src/main/res/layout/activity_main.xml" value="0.24114583333333334" />
         <entry key="..\:/androidCode/Cainiao/login/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/drawable/ic_coupon.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/drawable/ic_course.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/drawable/ic_default_header.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/drawable/ic_feedback.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/drawable/ic_gift_card.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/drawable/ic_group.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/drawable/ic_money.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/drawable/ic_sale.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/drawable/ic_shopping_le.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/layout/activity_mine.xml" value="0.24114583333333334" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/layout/fragment_mine.xml" value="0.1" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/layout/v_item_settings.xml" value="0.1" />
         <entry key="..\:/androidCode/Cainiao/service/src/main/res/drawable/ic_back.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/service/src/main/res/drawable/icon_account.xml" value="0.25729166666666664" />
         <entry key="..\:/androidCode/Cainiao/service/src/main/res/drawable/icon_server_host.xml" value="0.25729166666666664" />
         <entry key="..\:/androidCode/Cainiao/service/src/main/res/drawable/shape_white_card_bg.xml" value="0.25729166666666664" />
         <entry key="..\:/androidCode/Cainiao/service/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.25729166666666664" />

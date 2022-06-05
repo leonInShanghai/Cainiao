@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bobo.mine">
+    <!--网络权限-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- android:name=".LoginApplication"
+         android:theme="@style/CommonTheme"
+
+         android:label="@string/str_module_mine"
+         android:label="@string/str_module_mine"-->
+<!--    <application-->
+<!--        android:icon="@mipmap/ic_launcher"-->
+<!--        android:roundIcon="@mipmap/ic_launcher_round"-->
+<!--        android:theme="@style/CommonTheme">-->
+<!--        <activity-->
+<!--            android:name=".MineActivity"-->
+
+<!--            android:launchMode="singleTop">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--    </application>-->
+
+</manifest>
