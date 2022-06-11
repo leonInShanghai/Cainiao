@@ -25,6 +25,7 @@ android {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
             }
         }
+
         // kotlin ARouter 配置方式
         kapt {
             arguments {

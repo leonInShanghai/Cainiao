@@ -1,10 +1,12 @@
 package com.bobo.login
 
 import android.widget.Toast
-import com.blankj.utilcode.util.ToastUtils
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.bobo.common.base.BaseActivity
+import com.bobo.common.ktx.context
 import com.bobo.login.databinding.ActivityLoginBinding
 import com.bobo.login.net.RegisterRsp
+import com.bobo.service.repo.CniaoDbHelper
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -15,6 +17,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
  * 测试账号 18648957777
  * 测试账号 cn5123456
  */
+@Route(path = "/login/login")
 class LoginActivity: BaseActivity<ActivityLoginBinding>() {
 
      private val viewModel: LoginViewModel by viewModel()
@@ -52,15 +55,17 @@ class LoginActivity: BaseActivity<ActivityLoginBinding>() {
                     repoLogin()
                 }
             }
-            liveLoginRsp.observerKt {
-                Toast.makeText(this@LoginActivity, "登录结果：${it.toString()}", Toast.LENGTH_LONG).show()
+            liveLoginRsp.observerKt { rsp ->
+                Toast.makeText(this@LoginActivity, "登录结果：${rsp.toString()}", Toast.LENGTH_LONG).show()
+                // 判断rsp不为空
+                rsp?.let {
+                    // 同步到room数据库，登录状态
+                    CniaoDbHelper.insertUserInfo(context, rsp)
+                }
+                // 关闭Activity
+                finish()
             }
         }
     }
-
-    override fun initData() {
-
-    }
-
 }
 

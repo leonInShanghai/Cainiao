@@ -1,6 +1,7 @@
 package com.bobo.login.net
 
 import androidx.annotation.Keep
+import com.bobo.service.repo.CniaoUserInfo
 
 /**
  * Created by 公众号：IT波 on 2022/6/1 Copyright © Leon. All rights reserved.
@@ -19,18 +20,4 @@ data class RegisterRsp(
 /**
  * 手机号和密码登陆 接口响应
  */
-@Keep
-data class LoginRsp(
-    val course_permission:Boolean,
-    val token: String?,
-    val user: User?
-        ) {
-    @Keep
-    data class User(
-        val id: Int,  // 用户id
-        val logo_url:String?, // 用户头像url
-        val reg_time:String?, // 用户注册时间
-        val username:String?  // 用户名
-    )
-
-}
+typealias LoginRsp = CniaoUserInfo

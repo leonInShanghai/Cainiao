@@ -9,7 +9,7 @@ import org.koin.core.logger.Level
 
 /**
  * Created by 公众号：IT波 on 2022/6/5 Copyright © Leon. All rights reserved.
- * Functions:
+ * Functions: 抽象公共BaseApplication
  */
 abstract class BaseApplication : Application() {
 

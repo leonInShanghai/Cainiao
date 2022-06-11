@@ -2,7 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bobo.login">
 
-    <application>
+<!--    <application>-->
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/module_name"
+
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/CommonTheme">
         <activity android:name=".LoginActivity"
             android:launchMode="singleTop">
         </activity>

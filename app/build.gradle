@@ -1,5 +1,6 @@
 apply plugin:'com.android.application'
 apply from: '../dependencies.gradle'
+// apply plugin: 'com.didi.dokit' // dokit
 
 // plugins {
 //     id 'com.android.application'
@@ -11,31 +12,12 @@ android {
 
     defaultConfig {
         applicationId "com.bobo.cainiao"
-//        minSdk 21
-//        targetSdk 29// 31
-//        versionCode 1
-//        versionName "1.0"
-
-//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-//        buildTypes {
-//            release {
-//                minifyEnabled false
-//                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//            }
-//        }
-//        compileOptions {
-//            sourceCompatibility JavaVersion.VERSION_1_8
-//            targetCompatibility JavaVersion.VERSION_1_8
-//        }
-//        kotlinOptions {
-//            jvmTarget = '1.8'
-//        }
         // dependencies.gradle 有这一句但是这个不能注释掉，可能时android studio 版本的问题
-        buildFeatures {
-            viewBinding true
-        }
+//        buildFeatures {
+//            viewBinding true
+//        }
 }
 
 dependencies {
@@ -47,7 +29,7 @@ dependencies {
         implementation project(path: ':course')
         implementation project(path: ':study')
         implementation project(path: ':home')
-        // implementation project(path: ':login')
+        implementation project(path: ':login')
     }
 
     implementation project(path:':service')

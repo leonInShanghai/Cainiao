@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bobo.mine">
 
-    <application>
-        <activity
-            android:name=".MineActivity" />
-    </application>
+<!--    <application>-->
+<!--        <activity-->
+<!--            android:name=".MineActivity" />-->
+<!--    </application>-->
 
 </manifest>

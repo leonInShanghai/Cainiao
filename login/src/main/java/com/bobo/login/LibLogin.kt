@@ -4,10 +4,8 @@ import com.bobo.login.net.LoginService
 import com.bobo.login.repo.ILoginResource
 import com.bobo.login.repo.LoginRepo
 import com.bobo.common.network.KtRetrofit
-import com.bobo.common.utils.getBaseHost
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
-import org.koin.core.parameter.parametersOf
 import org.koin.dsl.bind
 import org.koin.dsl.module
 
@@ -20,6 +18,7 @@ val moduleLogin: Module = module {
     // service retrofit
     // single声明单例对象
      single {
+         // http://yapi.54yct.com/mock/24/
          KtRetrofit.initConfig("http://yapi.54yct.com/mock/24/") //baseurl
              .getService(LoginService::class.java)
      }

@@ -2,7 +2,7 @@ package com.bobo.service.utils
 
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.ColorInt
+import com.bobo.service.R
 import androidx.annotation.ColorRes
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
@@ -18,7 +18,8 @@ import com.bumptech.glide.Glide
  */
 @BindingAdapter("srcCompat", requireAll = false)
 fun imgSrc(iv: ImageView, src: Any?) {
-    Glide.with(iv).load(src).into(iv)
+    val imgRes = src ?: R.drawable.logo // 这行代码是做传统的非空判断
+    Glide.with(iv).load(imgRes).into(iv)
 }
 
 @BindingAdapter("tint")

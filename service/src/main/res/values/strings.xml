@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">service</string>
+<!--    <string name="app_name">service</string>-->
     <string name="str_server_host_dokit">切换Host</string>
     <string name="str_login_or_register">登录/免费注册</string>
 </resources>

@@ -12,6 +12,7 @@ import com.bobo.service.network.onBizError
 import com.bobo.service.network.onBizOK
 import com.bobo.service.network.onFailure
 import com.bobo.service.network.onSuccess
+import com.bobo.service.repo.CniaoUserInfo
 import retrofit2.await
 
 
@@ -59,7 +60,20 @@ class LoginRepo(private val service: LoginService): ILoginResource {
                     LogUtils.w("登录接口 BizeError $code, $message")
                 }
                 onBizOK<LoginRsp> { code, data, message ->
-                    _loginRsp.value = data
+
+                    // region 自定义头像姓名-自己造数据
+                    val user: CniaoUserInfo.User = CniaoUserInfo.User(data!!.user!!.id,
+                        "http://wx.qlogo.cn/mmopen/licWm10icRyasaxnp0t7IdEVAvpag9KiaLCc2XZiacGygB06zBlw" +
+                                "7eJF3icTeickalN0x3QLfOMDTq6V54p0gwtzl43GxF8LSVZHKC/64",
+                        "2022-1-1",
+                    "自己造数据")
+                    val newData =  CniaoUserInfo(0, data!!.course_permission, data.token, user)
+                    _loginRsp.value = newData
+                    // endregion 自定义头像姓名-自己造数据
+
+                    // 原来代码
+                    // _loginRsp.value = data
+
                     LogUtils.i("登录接口 BizOK  $data")
                 }
             }
