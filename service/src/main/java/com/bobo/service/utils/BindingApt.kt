@@ -19,7 +19,8 @@ import com.bumptech.glide.Glide
 @BindingAdapter("srcCompat", requireAll = false)
 fun imgSrc(iv: ImageView, src: Any?) {
     val imgRes = src ?: R.drawable.logo // 这行代码是做传统的非空判断
-    Glide.with(iv).load(imgRes).into(iv)
+    // Glide.with(iv).load(imgRes).into(iv)
+    Glide.with(iv).load(imgRes).placeholder(R.drawable.logo).into(iv)
 }
 
 @BindingAdapter("tint")

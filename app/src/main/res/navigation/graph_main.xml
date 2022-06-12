@@ -24,7 +24,7 @@
         android:label="StudyFragment" />
     <fragment
         android:id="@+id/mineFragment"
-        android:name="com.bobo.mine.MineFragment"
+        android:name="com.bobo.mine.ui.MineFragment"
         tools:layout="@layout/fragment_mine"
         android:label="MineFragment" />
 

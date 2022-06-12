@@ -38,16 +38,17 @@ class CnInterceptor : Interceptor {
             "version" to AppUtils.getAppVersionName()
         )
 
-        /*
+        /**
         * 如果token为空的话不传递
         * 在网络拦截器中更新token值
         * CniaoSpUtils  自定义的key-value 轻量数据存储管理类，便于替换
         * 本地获取token，默认值是原始请求的token
-        * */
+        * val localToken = MySpUtils.getString(SP_KEY_USER_TOKEN, originRequest.header("token")) ?: "tokenNull"
+        */
         val localToken = MySpUtils.getString(SP_KEY_USER_TOKEN, originRequest.header("token")) ?: ""
-       if (localToken.isNotEmpty()) {
-           attachHeaders.add("token" to localToken)
-       }
+        if (localToken.isNotEmpty()) {
+            attachHeaders.add("token" to localToken)
+        }
         val signHeaders:MutableList<Pair<String,String>> = mutableListOf<Pair<String,String>>()
         signHeaders.addAll(attachHeaders)
         //get的请求，参数

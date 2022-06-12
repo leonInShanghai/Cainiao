@@ -1,24 +1,15 @@
 package com.bobo.cainiao
 
-import android.os.Bundle
-import android.view.MenuItem
-import android.view.View
-import androidx.core.view.forEachIndexed
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import androidx.viewpager2.widget.ViewPager2
 import com.bobo.cainiao.databinding.ActivityMainBinding
 import com.bobo.common.base.BaseActivity
-import com.bobo.common.ktx.bindView
 import com.bobo.course.CourseFragment
 import com.bobo.home.HomeFragment
-import com.bobo.mine.MineFragment
 import com.bobo.study.StudyFragment
-import androidx.recyclerview.widget.RecyclerView
 import com.bobo.common.widget.BnvVp2Mediator
+import com.bobo.mine.ui.MineContainerFragment
 
 
 /**
@@ -33,7 +24,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         INDEX_HOEM to { HomeFragment() },
         INDEX_COURSE to { CourseFragment() },
         INDEX_STUDY to { StudyFragment() },
-        INDEX_MINE to { MineFragment() },
+        INDEX_MINE to { MineContainerFragment() }, // MineFragment()
     )
 
     override fun initConfig() {

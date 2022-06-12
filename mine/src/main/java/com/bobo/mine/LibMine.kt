@@ -1,6 +1,11 @@
 package com.bobo.mine
 
+import com.bobo.common.network.KtRetrofit
+import com.bobo.mine.net.MineService
+import com.bobo.mine.repo.IMineResource
+import com.bobo.mine.repo.MineRepo
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.dsl.bind
 import org.koin.dsl.module
 
 /**
@@ -8,5 +13,13 @@ import org.koin.dsl.module
  * Functions: Koin Kotlin 的依赖注入框架 的 mine model
  */
 val moduleMine = module {
-    viewModel { MineViewModel() }
+
+    single {
+        KtRetrofit.initConfig("http://yapi.54yct.com/mock/24/")
+            .getService(MineService::class.java)
+    }
+
+    single { MineRepo(get()) } bind IMineResource::class
+
+    viewModel { MineViewModel(get()) }
 }

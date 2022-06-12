@@ -15,8 +15,11 @@
         <entry key="..\:/androidCode/Cainiao/mine/src/main/res/drawable/ic_money.xml" value="0.25729166666666664" />
         <entry key="..\:/androidCode/Cainiao/mine/src/main/res/drawable/ic_sale.xml" value="0.25729166666666664" />
         <entry key="..\:/androidCode/Cainiao/mine/src/main/res/drawable/ic_shopping_le.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/drawable/shap_info_bg.xml" value="0.25729166666666664" />
         <entry key="..\:/androidCode/Cainiao/mine/src/main/res/layout/activity_mine.xml" value="0.24114583333333334" />
         <entry key="..\:/androidCode/Cainiao/mine/src/main/res/layout/fragment_mine.xml" value="0.1" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/layout/fragment_user_info.xml" value="0.25" />
+        <entry key="..\:/androidCode/Cainiao/mine/src/main/res/layout/user_fragment_container.xml" value="0.24114583333333334" />
         <entry key="..\:/androidCode/Cainiao/mine/src/main/res/layout/v_item_settings.xml" value="0.1" />
         <entry key="..\:/androidCode/Cainiao/service/src/main/res/drawable/ic_back.xml" value="0.25729166666666664" />
         <entry key="..\:/androidCode/Cainiao/service/src/main/res/drawable/icon_account.xml" value="0.25729166666666664" />
