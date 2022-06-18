@@ -24,6 +24,7 @@ class UserInfoFragment : BaseFragment() {
         FragmentUserInfoBinding.bind(view).apply {
             // toolbar返回
             toolbarUserInfo.setNavigationOnClickListener { findNavController().navigateUp() }
+            // 下面这行代码可以将返回图片的颜色改变
             toolbarUserInfo.navigationIcon?.setTint(Color.WHITE)
             // 保存返回按钮
             btnSaveUserInfo.setOnClickListener { findNavController().navigateUp() }

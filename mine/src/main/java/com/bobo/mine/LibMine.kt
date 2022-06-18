@@ -1,10 +1,12 @@
 package com.bobo.mine
 
 import com.bobo.common.network.KtRetrofit
+import com.bobo.common.utils.getBaseHost
 import com.bobo.mine.net.MineService
 import com.bobo.mine.repo.IMineResource
 import com.bobo.mine.repo.MineRepo
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.parameter.parametersOf
 import org.koin.dsl.bind
 import org.koin.dsl.module
 
@@ -14,9 +16,13 @@ import org.koin.dsl.module
  */
 val moduleMine = module {
 
+    // single {
+    //     KtRetrofit.initConfig("http://yapi.54yct.com/mock/24/")
+    //         .getService(MineService::class.java)
+    // }
+
     single {
-        KtRetrofit.initConfig("http://yapi.54yct.com/mock/24/")
-            .getService(MineService::class.java)
+        get<KtRetrofit> { parametersOf(getBaseHost()) }.getService(MineService::class.java)
     }
 
     single { MineRepo(get()) } bind IMineResource::class

@@ -4,14 +4,17 @@ import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.DeviceUtils
 import com.blankj.utilcode.util.EncryptUtils
 import com.blankj.utilcode.util.NetworkUtils
-import com.bobo.common.utils.MySpUtils
+import com.bobo.common.utils.CniaoSpUtils
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import okhttp3.*
 import java.lang.reflect.Type
 
-
+/**
+ * Created by 公众号：IT波 on 2022/6/18 Copyright © Leon. All rights reserved.
+ * Functions: 拦截器的封装
+ */
 class CnInterceptor : Interceptor {
     companion object {
         private val gson: Gson = GsonBuilder()
@@ -45,19 +48,19 @@ class CnInterceptor : Interceptor {
         * 本地获取token，默认值是原始请求的token
         * val localToken = MySpUtils.getString(SP_KEY_USER_TOKEN, originRequest.header("token")) ?: "tokenNull"
         */
-        val localToken = MySpUtils.getString(SP_KEY_USER_TOKEN, originRequest.header("token")) ?: ""
+        val localToken = CniaoSpUtils.getString(SP_KEY_USER_TOKEN, originRequest.header("token")) ?: ""
         if (localToken.isNotEmpty()) {
             attachHeaders.add("token" to localToken)
         }
         val signHeaders:MutableList<Pair<String,String>> = mutableListOf<Pair<String,String>>()
         signHeaders.addAll(attachHeaders)
-        //get的请求，参数
+        // get的请求，参数
         if (originRequest.method=="GET") {
             originRequest.url.queryParameterNames.forEach { key ->
                 signHeaders.add(key to (originRequest.url.queryParameter(key) ?: ""))
             }
         }
-        //post的请求 formBody形式，或json形式的，都需要将内部的字段，遍历出来，参与sign的计算
+        // post的请求 formBody形式，或json形式的，都需要将内部的字段，遍历出来，参与sign的计算
         val requestBody: RequestBody? = originRequest.body
         if (originRequest.method == "POST") {
             //formBody

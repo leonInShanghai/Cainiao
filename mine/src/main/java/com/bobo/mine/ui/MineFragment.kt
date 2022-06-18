@@ -8,6 +8,8 @@ import androidx.navigation.fragment.findNavController
 import com.alibaba.android.arouter.launcher.ARouter
 import com.blankj.utilcode.util.ToastUtils
 import com.bobo.common.base.BaseFragment
+import com.bobo.common.network.config.SP_KEY_USER_TOKEN
+import com.bobo.common.utils.CniaoSpUtils
 import com.bobo.mine.MineViewModel
 import com.bobo.mine.R
 import com.bobo.mine.databinding.FragmentMineBinding
@@ -19,7 +21,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
  * Functions: 我的界面
  * 测试账号 18648957777
  * 测试账号 cn5123456
- * debug第三方控件 https://www.dokit.cn/
+ * debug第三方库 https://www.dokit.cn/
  */
 class MineFragment : BaseFragment() {
 
@@ -35,6 +37,10 @@ class MineFragment : BaseFragment() {
             btnLogoutMine.setOnClickListener {
                 // 删除数据库中登录信息
                 CniaoDbHelper.deleteUserInfo(requireContext())
+                // 清空存储在本地的token
+                CniaoSpUtils.remove(SP_KEY_USER_TOKEN)
+                // 删除个人信息表里的数据
+                // UserInfoRspDBHelper.deleteUserInfoRsp(requireContext())
                 // 这里使用ARouter框架实现页面的跳转并非传统的startActivity
                 ARouter.getInstance().build("/login/login").navigation()
             }
@@ -44,7 +50,8 @@ class MineFragment : BaseFragment() {
                 val info = viewModel.liveinfo.value
 
                 // region 自己增加未登录提示用户去登录
-                info?:Toast.makeText(context, "请先登录", Toast.LENGTH_SHORT).show()
+//                info?:Toast.makeText(context, "请先登录", Toast.LENGTH_SHORT).show()
+                info?:ARouter.getInstance().build("/login/login").navigation()
                 // endregion 自己增加未登录提示用户去登录
 
                 info?.let {

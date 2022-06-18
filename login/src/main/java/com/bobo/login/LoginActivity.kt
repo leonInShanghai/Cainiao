@@ -4,6 +4,8 @@ import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.bobo.common.base.BaseActivity
 import com.bobo.common.ktx.context
+import com.bobo.common.network.config.SP_KEY_USER_TOKEN
+import com.bobo.common.utils.CniaoSpUtils
 import com.bobo.login.databinding.ActivityLoginBinding
 import com.bobo.login.net.RegisterRsp
 import com.bobo.service.repo.CniaoDbHelper
@@ -61,6 +63,8 @@ class LoginActivity: BaseActivity<ActivityLoginBinding>() {
                 rsp?.let {
                     // 同步到room数据库，登录状态
                     CniaoDbHelper.insertUserInfo(context, rsp)
+                    // 保存token
+                    CniaoSpUtils.put(SP_KEY_USER_TOKEN, rsp.token)
                 }
                 // 关闭Activity
                 finish()

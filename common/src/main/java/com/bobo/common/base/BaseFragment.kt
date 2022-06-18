@@ -45,10 +45,16 @@ abstract class BaseFragment: Fragment {
     // 强制子类实现并返回一个ViewDataBinding
     abstract fun bindView(view: View, savedInstanceState: Bundle?): ViewDataBinding
 
+    /**
+     * view初始化后必要的配置
+     */
     open fun initConfig() {
 
     }
 
+    /**
+     * view初始化后必要的数据
+     */
     open fun initData() {
 
     }
@@ -59,9 +65,9 @@ abstract class BaseFragment: Fragment {
     }
 
     /**
-     * 扩展liveData的observe函数
+     * 扩展liveData的observe函数 Any?
      */
-    protected fun <T: Any> LiveData<T>.observerKt(block:(T?)->Unit) {
+    protected fun <T: Any?> LiveData<T>.observerKt(block:(T?)->Unit) {
         this.observe(viewLifecycleOwner, Observer {data->
             // block.invoke(data) ← 也可以这样写
             block(data)

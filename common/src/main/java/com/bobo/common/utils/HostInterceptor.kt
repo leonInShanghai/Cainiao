@@ -11,9 +11,9 @@ class HostInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val originRequest = chain.request()
-        val oldHost = originRequest.url.host//release.course.api.cniao5.com 不带scheme http的
+        val oldHost = originRequest.url.host // release.course.api.cniao5.com 不带scheme http的
         val oldUrlStr = originRequest.url.toString()
-        //调试使用
+        // 调试使用
         val newHost = getBaseHost().toUri().host ?: oldHost
         val newUrlStr = if (newHost == oldHost) {
             oldUrlStr

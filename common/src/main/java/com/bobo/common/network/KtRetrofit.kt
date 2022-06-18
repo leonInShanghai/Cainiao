@@ -35,6 +35,7 @@ object KtRetrofit {
         .client(mOkClient)
 
     private var retrofit:Retrofit?=null //retrofit 请求client
+
     /**
      * 初始化配置
      */

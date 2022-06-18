@@ -11,7 +11,11 @@ import com.didichuxing.doraemonkit.DoraemonKit
 object AssistantApp {
 
     fun initConfig(application: Application){
-        DoraemonKit.install(application, mutableListOf(ServiceHostKit()))
+        DoraemonKit.install(
+            application, mutableListOf(
+                ServiceHostKit()
+            )
+        )
     }
 
 }
