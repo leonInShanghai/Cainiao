@@ -18,9 +18,18 @@ import com.bumptech.glide.Glide
  */
 @BindingAdapter("srcCompat", requireAll = false)
 fun imgSrc(iv: ImageView, src: Any?) {
-    val imgRes = src ?: R.drawable.logo // 这行代码是做传统的非空判断
+
+    // region 自定义
+    if (iv.id == 2131231074 || iv.id == 2131231085) {
+        val imgRes = src ?: R.drawable.logo // 这行代码是做传统的非空判断
+        Glide.with(iv).load(imgRes).placeholder(R.drawable.logo).into(iv)
+        return
+    }
+    // endregion 自定义
+
+    val imgRes = src ?: R.drawable.placeholder // 这行代码是做传统的非空判断
     // Glide.with(iv).load(imgRes).into(iv)
-    Glide.with(iv).load(imgRes).placeholder(R.drawable.logo).into(iv)
+    Glide.with(iv).load(imgRes).placeholder(R.drawable.placeholder).into(iv)
 }
 
 @BindingAdapter("tint")

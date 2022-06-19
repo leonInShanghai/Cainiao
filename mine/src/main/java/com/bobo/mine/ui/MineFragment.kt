@@ -1,6 +1,7 @@
 package com.bobo.mine.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.databinding.ViewDataBinding
@@ -62,6 +63,7 @@ class MineFragment : BaseFragment() {
                 }
             }
         }
+
     }
 
     override fun initData() {

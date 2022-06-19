@@ -7,6 +7,7 @@ import com.bobo.login.moduleLogin
 import com.bobo.mine.moduleMine
 import com.bobo.service.assistant.AssistantApp
 import com.bobo.service.moduleService
+import com.bobo.study.moduleStudy
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module
 
@@ -18,7 +19,7 @@ class CnApplication : BaseApplication() {
 
 
     private val modules = arrayListOf<Module> (
-        moduleService, /*moduleHome,*/moduleLogin, moduleMine
+        moduleService, /*moduleHome,*/moduleLogin, moduleMine, moduleStudy
     )
 
 //    override fun onCreate() {
