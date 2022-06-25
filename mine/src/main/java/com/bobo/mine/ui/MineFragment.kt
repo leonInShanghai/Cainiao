@@ -1,13 +1,10 @@
 package com.bobo.mine.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.databinding.ViewDataBinding
 import androidx.navigation.fragment.findNavController
 import com.alibaba.android.arouter.launcher.ARouter
-import com.blankj.utilcode.util.ToastUtils
 import com.bobo.common.base.BaseFragment
 import com.bobo.common.network.config.SP_KEY_USER_TOKEN
 import com.bobo.common.utils.CniaoSpUtils

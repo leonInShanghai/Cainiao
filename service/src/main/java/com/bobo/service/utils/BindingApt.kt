@@ -6,6 +6,7 @@ import com.bobo.service.R
 import androidx.annotation.ColorRes
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.google.android.material.imageview.ShapeableImageView
 
 /**
  * Created by 公众号：IT波 on 2022/6/4 Copyright © Leon. All rights reserved.
@@ -19,17 +20,38 @@ import com.bumptech.glide.Glide
 @BindingAdapter("srcCompat", requireAll = false)
 fun imgSrc(iv: ImageView, src: Any?) {
 
+    // 原来的写法
+    // val imgRes = when(src) {
+    //     is String -> {
+    //         when {
+    //             src.startsWith("//img.cniao5.com") -> "https:$src"
+    //             src.startsWith("/img.cniao5.com") -> "https:/$src"
+    //             else -> src
+    //         }
+    //     }
+    // }
+
     // region 自定义
-    if (iv.id == 2131231074 || iv.id == 2131231085) {
-        val imgRes = src ?: R.drawable.logo // 这行代码是做传统的非空判断
-        Glide.with(iv).load(imgRes).placeholder(R.drawable.logo).into(iv)
-        return
+    val imgRes = when(src) {
+        is String -> {
+            when {
+                src.startsWith("//img.cniao5.com") -> "https:$src"
+                src.startsWith("/img.cniao5.com") -> "https:/$src"
+                else -> null
+            }
+        } else -> src
+    }
+    var placeholder =  R.drawable.placeholder
+    var imgRes2 = imgRes ?: R.drawable.placeholder // 这行代码是做传统的非空判断
+    if (iv is ShapeableImageView) { // 圆形imageView设置圆形占位图
+        placeholder = R.drawable.logo // 这行代码是做传统的非空判断
+        imgRes2 = imgRes ?: R.drawable.logo // 当src为null圆形imageView设置圆形本地图片
     }
     // endregion 自定义
 
-    val imgRes = src ?: R.drawable.placeholder // 这行代码是做传统的非空判断
+    // 原来的写法
     // Glide.with(iv).load(imgRes).into(iv)
-    Glide.with(iv).load(imgRes).placeholder(R.drawable.placeholder).into(iv)
+    Glide.with(iv).load(imgRes2).placeholder(placeholder).into(iv)
 }
 
 @BindingAdapter("tint")

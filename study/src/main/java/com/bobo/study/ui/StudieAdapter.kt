@@ -51,7 +51,7 @@ class StudiedVH(private val binding: ItemCourseStudyBinding) : RecyclerView.View
 
     fun bind(info: StudiedRsp.Data) {
         binding.info = info
-        binding.npdProgressItemStudy.progress = info.progress.toInt()
+        binding.npbProgressItemStudy.progress = info.progress.toInt()
         binding.executePendingBindings()
     }
 
