@@ -57,11 +57,12 @@ class StudyRepo(private val service: StudyService) : IStudyResource {
                 }
                 onBizOK<StudiedRsp> { code, data, message ->
                     _seudyList.value = data?.apply {
-                        datas?.forEach {
-                            if (it.imgUrl?.startsWith("/") == true) {
-                                it.imgUrl = "${getBaseHost()}${it.imgUrl}"
-                            }
-                        }
+                        // 已经在 service\utils\BindingApt.kt 处理
+                        // datas?.forEach {
+                        //     if (it.imgUrl?.startsWith("/") == true) {
+                        //         it.imgUrl = "${getBaseHost()}${it.imgUrl}"
+                        //     }
+                        // }
                     }
                     LogUtils.i("获取学习过的课程列表 onBizOK $data")
                     return@onBizOK

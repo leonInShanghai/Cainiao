@@ -154,7 +154,7 @@
             android:id="@+id/tl_study"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/tv_study"
+            app:layout_constraintBottom_toTopOf="@id/rv_study"
             app:layout_constraintTop_toTopOf="@id/v_center_bg_study"
             app:tabIndicatorFullWidth="false"
             app:tabIndicatorGravity="bottom">
@@ -173,7 +173,7 @@
 
         <!-- app:adapter="@{vm.adapter}" -->
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/tv_study"
+            android:id="@+id/rv_study"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@color/colorWindowBackGround"
@@ -183,8 +183,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="@id/v_center_bg_study"
             app:layout_constraintTop_toBottomOf="@id/tl_study"
-            android:overScrollMode="never"
-            app:adapter="@{vm.adapter}"/>
+            android:overScrollMode="never" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -47,7 +47,7 @@ object StudyUtils {
         } else if (info?.imgUrl != null){
             "${info?.imgUrl}"
         } else {
-            return ""
+             ""
         }
     }
 

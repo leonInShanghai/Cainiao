@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import com.bobo.common.base.BaseFragment
 import com.bobo.service.repo.CniaoDbHelper
 import com.bobo.study.databinding.FragmentStudyBinding
+import com.bobo.study.ui.StudieAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class StudyFragment : BaseFragment() {
@@ -19,8 +20,15 @@ class StudyFragment : BaseFragment() {
         return FragmentStudyBinding.bind(view).apply {
             // viewModel赋值
             vm = viewModel
+            // region 自定义
+            rvStudy.adapter = myAdapter
+            // endregion 自定义
         }
     }
+
+    // region 自定义
+    private val myAdapter: StudieAdapter = StudieAdapter()
+    // endregion 自定义
 
     override fun initData() {
         super.initData()
@@ -34,15 +42,17 @@ class StudyFragment : BaseFragment() {
         // 获取到最近学习的数据列表
         viewModel.apply {
             liveStudyList.observerKt {
-
+                // region 自定义
+                myAdapter.submit(it?.datas ?: emptyList())
+                // endregion 自定义
             }
-            lifecycleScope.launchWhenStarted {
-                pagingData().observerKt { data ->
-                    data?.let {
-                        adapter.submitData(lifecycle, data)
-                    }
-                }
-            }
+            // lifecycleScope.launchWhenStarted {
+            //     pagingData().observerKt { data ->
+            //         data?.let {
+            //             adapter.submitData(lifecycle, data)
+            //         }
+            //     }
+            // }
         }
     }
 }
