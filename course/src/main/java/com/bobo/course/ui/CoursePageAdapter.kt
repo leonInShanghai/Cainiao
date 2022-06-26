@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bobo.course.databinding.ItemCourseBinding
+import com.bobo.course.databinding.ItemCourseRecycBinding
 import com.bobo.course.net.CourseListRsp
 
 /**
@@ -42,13 +42,13 @@ class CoursePageAdapter : PagingDataAdapter<CourseListRsp.Data, CourseVH>(differ
     }
 }
 
-class CourseVH(private val binding: ItemCourseBinding) : RecyclerView.ViewHolder(binding.root) {
+class CourseVH(private val binding: ItemCourseRecycBinding) : RecyclerView.ViewHolder(binding.root) {
 
     // [kəmˈpæniən]
     companion object {
         fun createVH(parent: ViewGroup) : CourseVH {
             return CourseVH(
-                ItemCourseBinding.inflate(LayoutInflater.from(parent.context),
+                ItemCourseRecycBinding.inflate(LayoutInflater.from(parent.context),
                     parent,
                     false)
             )

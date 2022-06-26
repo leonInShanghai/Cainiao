@@ -15,8 +15,8 @@ import com.bobo.course.ui.CoursePageAdapter
  */
 class CourseViewModel(private val repo: ICourseResource) : BaseViewModel() {
 
-    // 课程分类
-    val liveStudyInfo: LiveData<CourseCategoryRsp> = repo.liveCourseType
+    // 课程分类 liveCourseType
+    val liveTypes: LiveData<CourseCategoryRsp> = repo.liveCourseType
 
     val adapter = CoursePageAdapter()
 
@@ -24,8 +24,23 @@ class CourseViewModel(private val repo: ICourseResource) : BaseViewModel() {
         repo.getCourseTypeList()
     }
 
-    suspend fun typedCourseList() =
-        repo.getTypeCourseList()
-            .asLiveData(viewModelScope.coroutineContext)
-            .cachedIn(viewModelScope)
+    suspend fun typedCourseList(
+        course_type: Int = -1,
+        code: String = "all",
+        difficuly: Int = -1,
+        is_free: Int = -1,
+        q: Int = -1
+    ) =
+        repo.getTypeCourseList(course_type,
+            code,
+            difficuly,
+            is_free,
+            q).cachedIn(viewModelScope)
+            // .asLiveData(viewModelScope.coroutineContext)
+            // .cachedIn(viewModelScope)
+
+//    suspend fun typedCourseList() =
+//        repo.getTypeCourseList()
+//            .asLiveData(viewModelScope.coroutineContext)
+//            .cachedIn(viewModelScope)
 }

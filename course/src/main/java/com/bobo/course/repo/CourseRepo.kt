@@ -25,6 +25,7 @@ class CourseRepo(private val service: CourseService) : ICourseResource {
 
     private val _courseType = MutableLiveData<CourseCategoryRsp>()
 
+    // liveCourseType
     override val liveCourseType: LiveData<CourseCategoryRsp> = _courseType
 
     override suspend fun getCourseTypeList() {
@@ -35,6 +36,7 @@ class CourseRepo(private val service: CourseService) : ICourseResource {
                     LogUtils.w("CourseRepo 获取课程分类 BizError $code, $message")
                 }
                 onBizOK<CourseCategoryRsp> { code, data, message ->
+                    _courseType.value = data
                     LogUtils.w("CourseRepo 获取课程分类 onBizOK $data")
                 }
             }.onFailure {
@@ -43,7 +45,13 @@ class CourseRepo(private val service: CourseService) : ICourseResource {
     }
 
     private val pageSize = 20
-    override suspend fun getTypeCourseList(): Flow<PagingData<CourseListRsp.Data>> {
+    override suspend fun getTypeCourseList(
+        course_type: Int,
+        code: String,
+        difficuly: Int,
+        is_free: Int,
+        q: Int
+    ): Flow<PagingData<CourseListRsp.Data>> {
         val config = PagingConfig(
             pageSize = pageSize,
             prefetchDistance = 5,
@@ -52,8 +60,20 @@ class CourseRepo(private val service: CourseService) : ICourseResource {
         )
 
         return Pager(config = config, null) {
-            CoursePagingSource(service)
+            CoursePagingSource(service, course_type, code, difficuly, is_free, q)
         }.flow
     }
+//    override suspend fun getTypeCourseList(): Flow<PagingData<CourseListRsp.Data>> {
+//        val config = PagingConfig(
+//            pageSize = pageSize,
+//            prefetchDistance = 5,
+//            initialLoadSize = 10,
+//            maxSize = pageSize * 3
+//        )
+//
+//        return Pager(config = config, null) {
+//            CoursePagingSource(service)
+//        }.flow
+//    }
 
 }

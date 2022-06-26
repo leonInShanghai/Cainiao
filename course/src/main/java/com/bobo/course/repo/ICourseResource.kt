@@ -23,6 +23,15 @@ interface ICourseResource {
     /**
      * 根据类别获取课程列表
      */
-    suspend fun getTypeCourseList(): Flow<PagingData<CourseListRsp.Data>>
+    suspend fun getTypeCourseList(
+        course_type: Int,
+        code: String,
+        difficuly: Int,
+        is_free: Int,
+        q: Int
+    ): Flow<PagingData<CourseListRsp.Data>>
+
+//    suspend fun getTypeCourseList(
+//    ): Flow<PagingData<CourseListRsp.Data>>
 
 }
