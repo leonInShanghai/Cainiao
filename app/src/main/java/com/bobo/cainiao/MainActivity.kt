@@ -6,7 +6,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.bobo.cainiao.databinding.ActivityMainBinding
 import com.bobo.common.base.BaseActivity
 import com.bobo.course.CourseFragment
-import com.bobo.home.HomeFragment
+import com.bobo.home.ui.HomeFragment
 import com.bobo.study.StudyFragment
 import com.bobo.common.widget.BnvVp2Mediator
 import com.bobo.mine.ui.MineContainerFragment

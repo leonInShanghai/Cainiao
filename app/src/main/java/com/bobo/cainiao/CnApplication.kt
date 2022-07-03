@@ -4,6 +4,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.bobo.common.BaseApplication
 import com.bobo.common.ktx.application
 import com.bobo.course.moduleCourse
+import com.bobo.home.moduleHome
 import com.bobo.login.moduleLogin
 import com.bobo.mine.moduleMine
 import com.bobo.service.assistant.AssistantApp
@@ -20,7 +21,7 @@ class CnApplication : BaseApplication() {
 
 
     private val modules = arrayListOf<Module> (
-        moduleService, /*moduleHome,*/moduleLogin, moduleMine, moduleStudy, moduleCourse
+        moduleService, moduleHome, moduleLogin, moduleMine, moduleStudy, moduleCourse
     )
 
 //    override fun onCreate() {

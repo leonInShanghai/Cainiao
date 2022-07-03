@@ -3,9 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/androidCode/Cainiao/common/src/main/res/layout/activity_web_view.xml" value="0.24114583333333334" />
         <entry key="..\:/androidCode/Cainiao/course/src/main/res/drawable/ic_drop_down.xml" value="0.25729166666666664" />
         <entry key="..\:/androidCode/Cainiao/course/src/main/res/drawable/ic_mine_small.xml" value="0.25729166666666664" />
         <entry key="..\:/androidCode/Cainiao/course/src/main/res/layout/item_course.xml" value="0.24114583333333334" />
+        <entry key="..\:/androidCode/Cainiao/home/src/main/res/drawable/ic_mine_small.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/home/src/main/res/layout/item_home.xml" value="0.24114583333333334" />
+        <entry key="..\:/androidCode/Cainiao/home/src/main/res/layout/item_home_course.xml" value="0.24114583333333334" />
+        <entry key="..\:/androidCode/Cainiao/home/src/main/res/layout/item_home_course_free.xml" value="0.24114583333333334" />
+        <entry key="..\:/androidCode/Cainiao/home/src/main/res/layout/item_job_class.xml" value="0.24114583333333334" />
+        <entry key="..\:/androidCode/Cainiao/home/src/main/res/layout/item_teacher.xml" value="0.24114583333333334" />
         <entry key="..\:/androidCode/Cainiao/login/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/androidCode/Cainiao/login/src/main/res/layout/activity_main.xml" value="0.24114583333333334" />
         <entry key="..\:/androidCode/Cainiao/login/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.25729166666666664" />

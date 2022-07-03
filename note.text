@@ -1,0 +1,10 @@
+
+// 登录成功后打印
+ {"code":1,"data":{"course_permission":true,"token":"xxxxxxx","user":{"id":1111,"is_bind_phone":true,"logo_url":"xxx","username":"xxx"}},"message":"成功"}
+
+ 登录接口 BizOK  LoginRsp(course_permission=true, token=xxxxxxx, user=User(id=1111, logo_url=xxx, reg_time=null, username=xxx))
+
+// 个人信息请求成功后打印
+{"code":1,"data":{"company":"菜鸟窝","desc":"菜鸟窝创始人，首席体验官兼首席客服。","email":"ivan@163.com","focus_it":"","follower_count":260000,"following_count":1,"id":1,"job":"创始人","logo_url":"//img.cniao5.com/FmDPz-vX7e0HGJYdqGo4sWCXti_j?imageMogr2/thumbnail/300x301/crop/!273x273a0a0","mobi":"1xxxxxx","real_name":"艾文","username":"Ivan.wong","work_years":"5-10"},"message":"成功"}
+
+{"code":1,"data":{"datas":[{"course":{"h5site":"https://h5.cniao5.com/skill/10","id":10205,"img_url":"//img.cniao5.com/o_1du7o1k6ei45t1cm0h1skt1i4tm.png","name":"Android 音视频开发工程师","website":"https://www.cniao5.com/skill/10"},"course_type":4,"current_price":6699,"id":16,"lessons_count":null,"number":2,"original_price":7000,"progress":0,"title":"Android资深工程师（NDK/音视频/图像方向）","get_method":1,"left_expiry_days":113},{"brief":"# 菜鸟商城 # 是一个仿淘宝客户端的实战课程，功能包括：1.支付（支付宝，微信，百度钱包） 、首页 、热卖 、商品大全 、购物车 、我的 、商品列表 、商品详情 、注册/登录 、收货地址 、我的订单 、我的收藏 .....同时课程中使用了Android5.0的最新技术：Toolbar,RecyclerView,CardView,Tablayout,SwipeRefeshLayout,\n和大部分目前主流的技术：Xutils、OKhttp，Fresco ， Picasso ，gson，H5与原始开发，高层封装，组件封装，自定义控件,朋友圈九宫格等","comment_count":38,"cost_price":539,"course_type":3,"first_category":{"code":"android","id":1,"title":"Android"},"id":10073,"img_url":"//img.cniao5.com/05f9f640-4c5a-11e5-a1a6-00163e0230fa.jpg","is_distribution":false,"is_free":0,"is_live":0,"is_pt":false,"lessons_played_time":65153,"name":"『菜鸟商城』仿淘宝客户端电商平台","now_price":299,"progress":0}],"page":1,"size":100,"total":116,"total_page":2},"message":"成功"}
