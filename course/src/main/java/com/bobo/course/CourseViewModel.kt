@@ -11,7 +11,7 @@ import com.bobo.course.ui.CoursePageAdapter
 
 /**
  * Created by 公众号：IT波 on 2022/6/25 Copyright © Leon. All rights reserved.
- * Functions:
+ * Functions: api地址：http://yapi.54yct.com/project/24/interface/api/2127
  */
 class CourseViewModel(private val repo: ICourseResource) : BaseViewModel() {
 
@@ -35,7 +35,7 @@ class CourseViewModel(private val repo: ICourseResource) : BaseViewModel() {
             code,
             difficuly,
             is_free,
-            q).cachedIn(viewModelScope)
+            q).cachedIn(viewModelScope)  // 跟viewModel的生命周期绑定
             // .asLiveData(viewModelScope.coroutineContext)
             // .cachedIn(viewModelScope)
 
@@ -43,4 +43,5 @@ class CourseViewModel(private val repo: ICourseResource) : BaseViewModel() {
 //        repo.getTypeCourseList()
 //            .asLiveData(viewModelScope.coroutineContext)
 //            .cachedIn(viewModelScope)
+
 }

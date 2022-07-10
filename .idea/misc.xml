@@ -4,9 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/androidCode/Cainiao/common/src/main/res/layout/activity_web_view.xml" value="0.24114583333333334" />
+        <entry key="..\:/androidCode/Cainiao/course/src/main/res/drawable/ic_check.xml" value="0.25729166666666664" />
         <entry key="..\:/androidCode/Cainiao/course/src/main/res/drawable/ic_drop_down.xml" value="0.25729166666666664" />
         <entry key="..\:/androidCode/Cainiao/course/src/main/res/drawable/ic_mine_small.xml" value="0.25729166666666664" />
+        <entry key="..\:/androidCode/Cainiao/course/src/main/res/layout/item_child_chapter.xml" value="0.24114583333333334" />
         <entry key="..\:/androidCode/Cainiao/course/src/main/res/layout/item_course.xml" value="0.24114583333333334" />
+        <entry key="..\:/androidCode/Cainiao/course/src/main/res/layout/item_course_recyc.xml" value="0.24114583333333334" />
+        <entry key="..\:/androidCode/Cainiao/course/src/main/res/layout/item_parent_chapter.xml" value="0.24114583333333334" />
+        <entry key="..\:/androidCode/Cainiao/course/src/main/res/layout/playvideo_course_details.xml" value="0.24114583333333334" />
+        <entry key="..\:/androidCode/Cainiao/course/src/main/res/layout/pop_course_level.xml" value="0.24114583333333334" />
+        <entry key="..\:/androidCode/Cainiao/course/src/main/res/layout/pop_course_price.xml" value="0.24114583333333334" />
         <entry key="..\:/androidCode/Cainiao/home/src/main/res/drawable/ic_mine_small.xml" value="0.25729166666666664" />
         <entry key="..\:/androidCode/Cainiao/home/src/main/res/layout/item_home.xml" value="0.24114583333333334" />
         <entry key="..\:/androidCode/Cainiao/home/src/main/res/layout/item_home_course.xml" value="0.24114583333333334" />

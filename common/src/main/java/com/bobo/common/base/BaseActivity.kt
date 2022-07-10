@@ -72,7 +72,7 @@ abstract class BaseActivity<ActBinding: ViewDataBinding>: AppCompatActivity {
 //        })
 //    }
 
-    protected inline fun <T: Any> LiveData<T>.observerKt(crossinline block:(T?) -> Unit) {
+    protected inline fun <T: Any?> LiveData<T>.observerKt(crossinline block:(T?) -> Unit) {
         this.observe(this@BaseActivity, Observer {
             block(it)
         })

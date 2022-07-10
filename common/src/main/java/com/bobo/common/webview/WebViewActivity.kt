@@ -1,7 +1,9 @@
 package com.bobo.common.webview
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.ViewGroup
@@ -13,10 +15,10 @@ import com.just.agentweb.AgentWebView
 import com.just.agentweb.BuildConfig
 import com.just.agentweb.DefaultWebClient
 
-
-/*
-* webview初始化配置，需要在Manifest中声明activity和权限
-* */
+/**
+ * webview初始化配置，需要在Manifest中声明activity和权限
+ * http://mpvideo.qpic.cn/0bf2yiaaqaaapaam2nxsfnpvbqwdbdbaacaa.f10002.mp4?dis_k=d0742c3fa7127b4a10b09ff43433e608&dis_t=1657354035&vid=wxv_1680298232922341383&format_id=10002&support_redirect=0&mmversion=false
+ */
 class WebViewActivity : AppCompatActivity() {
 
     private lateinit var mAgentWeb: AgentWeb
@@ -35,7 +37,8 @@ class WebViewActivity : AppCompatActivity() {
                     ViewGroup.LayoutParams.MATCH_PARENT
                 )
             )
-            .useDefaultIndicator(resources.getColor(R.color.colorAccent))
+            // 加载进入条的颜色
+            .useDefaultIndicator(resources.getColor(R.color.colorAccent)) // resources.getColor(R.color.transparent)
             .setMainFrameErrorView(R.layout.agentweb_error_page, -1)
             .setSecurityType(AgentWeb.SecurityType.STRICT_CHECK)
             .setOpenOtherPageWays(DefaultWebClient.OpenOtherPageWays.ASK)//打开其他应用时，弹窗咨询用户是否前往其他应用
@@ -44,8 +47,8 @@ class WebViewActivity : AppCompatActivity() {
             .ready()
             .get()
 
+
         val url = intent.getStringExtra("url")
-        //        mAgentWeb.urlLoader.loadUrl("file:///android_asset/test.html")
         mAgentWeb.urlLoader.loadUrl(url)
         //添加js调用native的函数
         // mAgentWeb.jsInterfaceHolder.addJavaObject(JS_CALL_APP_KEY, JsAndroidApi) //把本地保存的appkey给h5调用方，h5不用再次登录

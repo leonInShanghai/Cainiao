@@ -3,7 +3,9 @@ package com.bobo.course.repo
 import androidx.lifecycle.LiveData
 import androidx.paging.PagingData
 import com.bobo.course.net.CourseCategoryRsp
+import com.bobo.course.net.CourseDetails
 import com.bobo.course.net.CourseListRsp
+import com.bobo.course.net.MyCourseDetail
 import kotlinx.coroutines.flow.Flow
 
 
@@ -14,8 +16,10 @@ import kotlinx.coroutines.flow.Flow
 interface ICourseResource {
 
     val liveCourseType: LiveData<CourseCategoryRsp>
+    // 课程详情
+    val liveCourseDetails: LiveData<CourseDetails?>
 
-    /**
+    /**s
      * 课程分类列表
      */
     suspend fun getCourseTypeList()
@@ -34,4 +38,8 @@ interface ICourseResource {
 //    suspend fun getTypeCourseList(
 //    ): Flow<PagingData<CourseListRsp.Data>>
 
+    // 课程播放目录列表
+    suspend fun getCourseDetails(
+        course_id: Int
+    )
 }

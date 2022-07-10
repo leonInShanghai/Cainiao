@@ -70,7 +70,11 @@
             app:layout_constraintBottom_toBottomOf="@id/v_bg_header_mine"
             app:layout_constraintEnd_toStartOf="@id/v_coupon_mine"
             app:layout_constraintStart_toStartOf="@id/v_bg_header_mine"
-            app:layout_constraintTop_toBottomOf="@id/v_line_header_mine"/>
+            app:layout_constraintTop_toBottomOf="@id/v_line_header_mine"
+
+            android:onClick="@{(v)->vm.startToWebView(v)}"/>
+            <!-- android:onClick="@{(v)->vm.startToWebView(v)}"
+                 是自己增加的方法 -->
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/v_coupon_mine"
@@ -86,7 +90,11 @@
             app:layout_constraintBottom_toBottomOf="@id/v_bg_header_mine"
             app:layout_constraintEnd_toEndOf="@id/v_bg_header_mine"
             app:layout_constraintStart_toEndOf="@id/tv_orders_mine"
-            app:layout_constraintTop_toBottomOf="@id/v_line_header_mine"/>
+            app:layout_constraintTop_toBottomOf="@id/v_line_header_mine"
+
+            android:onClick="@{(v)->vm.startToWebView(v)}"/>
+        <!-- android:onClick="@{(v)->vm.startToWebView(v)}"
+             是自己增加的方法 -->
 
         <com.bobo.mine.widget.ItemSettingsView
             android:id="@+id/isv_study_card_mine"
@@ -96,7 +104,11 @@
             android:background="@color/colorWhite"
             app:icon="@drawable/ic_gift_card"
             app:layout_constraintTop_toBottomOf="@id/v_bg_header_mine"
-            app:title="学习卡 免费领"/>
+            app:title="学习卡 免费领"
+
+            android:onClick="@{(v)->vm.startToWebView(v)}"/>
+        <!-- android:onClick="@{(v)->vm.startToWebView(v)}"
+             是自己增加的方法 -->
 
         <com.bobo.mine.widget.ItemSettingsView
             android:id="@+id/isv_share_sale_mine"
@@ -106,7 +118,11 @@
             android:background="@color/colorWhite"
             app:icon="@drawable/ic_sale"
             app:layout_constraintTop_toBottomOf="@id/isv_study_card_mine"
-            app:title="分销中心"/>
+            app:title="分销中心"
+
+            android:onClick="@{(v)->vm.startToWebView(v)}"/>
+        <!-- android:onClick="@{(v)->vm.startToWebView(v)}"
+             是自己增加的方法 -->
 
         <com.bobo.mine.widget.ItemSettingsView
             android:id="@+id/isv_group_shopping_mine"
@@ -116,7 +132,11 @@
             android:background="@color/colorWhite"
             app:icon="@drawable/ic_group"
             app:layout_constraintTop_toBottomOf="@id/isv_share_sale_mine"
-            app:title="我的拼团"/>
+            app:title="我的拼团"
+
+            android:onClick="@{(v)->vm.startToWebView(v)}"/>
+        <!-- android:onClick="@{(v)->vm.startToWebView(v)}"
+             是自己增加的方法 -->
 
         <com.bobo.mine.widget.ItemSettingsView
             android:id="@+id/isv_liked_course_mine"
@@ -126,7 +146,11 @@
             android:background="@color/colorWhite"
             app:icon="@drawable/ic_course_mine"
             app:layout_constraintTop_toBottomOf="@id/isv_group_shopping_mine"
-            app:title="想学的课"/>
+            app:title="想学的课"
+
+            android:onClick="@{(v)->vm.startToWebView(v)}"/>
+        <!-- android:onClick="@{(v)->vm.startToWebView(v)}"
+             是自己增加的方法 -->
 
         <com.bobo.mine.widget.ItemSettingsView
             android:id="@+id/isv_feedback_mine"
@@ -136,7 +160,11 @@
             android:background="@color/colorWhite"
             app:icon="@drawable/ic_feedback"
             app:layout_constraintTop_toBottomOf="@id/isv_liked_course_mine"
-            app:title="意见反馈"/>
+            app:title="意见反馈"
+
+            android:onClick="@{(v)->vm.startToWebView(v)}"/>
+        <!-- android:onClick="@{(v)->vm.startToWebView(v)}"
+             是自己增加的方法 -->
 
         <!-- android:backgroundTint="@color/colorWhite" -->
         <com.google.android.material.button.MaterialButton

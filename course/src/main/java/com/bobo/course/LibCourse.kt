@@ -23,4 +23,7 @@ val moduleCourse = module{
     single { CourseRepo(get()) } bind ICourseResource::class
 
     viewModel { CourseViewModel(get()) }
+
+    // No definition found for class:'com.bobo.course.PlayVideoViewModel'. Check your definitions!
+    viewModel { PlayVideoViewModel(get()) }
 }

@@ -281,6 +281,8 @@
     <color name="darkviolet">#9400d3</color><!--暗紫罗兰色 -->
     <color name="mediumorchid">#ba55d3</color><!--中粉紫色 -->
 
+    <color name="transparent">#00000000</color>
+
 </resources>
 
 <!--<?xml version="1.0" encoding="utf-8"?>-->

@@ -89,9 +89,9 @@ data class CourseListRsp(
     }
 }
 
-/*
-* 课程播放目录列表
-* */
+/**
+ * 课程播放目录列表
+ */
 class CourseDetails : ArrayList<CourseDetails.CourseDetailsItem?>(){
     @Keep
     data class CourseDetailsItem(
