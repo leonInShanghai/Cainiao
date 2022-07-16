@@ -3,6 +3,7 @@ package com.bobo.study.ui
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bobo.common.utils.NoDoubleClickUtil
 import com.bobo.common.webview.WebViewActivity
 import com.bobo.study.databinding.ItemCourseStudyBinding
 import com.bobo.study.net.StudiedRsp
@@ -56,6 +57,10 @@ class StudiedVH(private val binding: ItemCourseStudyBinding) : RecyclerView.View
 
         // region 自己增加
         binding.cdParent.setOnClickListener {
+
+            // 避免用户快速点击开启多个界面
+            if (NoDoubleClickUtil.isDoubleClick()) return@setOnClickListener
+
             WebViewActivity.openUrl(it.context, "https://mp.weixin.qq.com/s?__biz=MzI3NTc0NzI0NA==&mid=2247484061&" +
                     "idx=1&sn=d6661c299d64c50eb459d93cbd626557&chksm=eb015a5edc76d3485d5a100ad0ee12799f85303edd61b9e1f7" +
                     "a5316e0d6d4281281385479dff&mpshare=1&scene=23&srcid=0710cNQ7H9SuyXeaT8DLQI78&sharer_sharetime=165" +
