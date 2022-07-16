@@ -1,9 +1,6 @@
 # Cainiao
 ## 波波菜鸟窝 Kotlin + Jetpack 开发在线教育App 😊
 
-
-## MVP架构 一款仿电商类APP 服务器端是请求程序员拉大锯的接口
-
 * 特色列举
     * Kotlin+Jetpack
     * MVVM架构
